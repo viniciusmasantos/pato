@@ -7,6 +7,8 @@ defmodule PatoWeb.Router do
 
   scope "/api", PatoWeb do
     pipe_through :api
+
+    get "/ping", HealthCheckController, :ping
   end
 
   # Enables LiveDashboard only for development
