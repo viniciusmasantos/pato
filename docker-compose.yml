@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  pg_db:
+    image: postgres:13
+    container_name: pato_db
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - PGUSER=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data: 
+ 
