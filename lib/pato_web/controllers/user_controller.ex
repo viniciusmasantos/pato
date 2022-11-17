@@ -7,7 +7,7 @@ defmodule PatoWeb.UserController do
     with {:ok, user} <- Pato.Auth.create_user(params) do
       conn
       |> put_status(201)
-      |> json(%{data: %{login: user.login, password: user.password}})
+      |> render("show.json", user: user)
     end
   end
 end
