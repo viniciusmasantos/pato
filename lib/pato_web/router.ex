@@ -10,6 +10,7 @@ defmodule PatoWeb.Router do
 
     get "/ping", HealthCheckController, :ping
     post "/users", UserController, :create
+    put "/users/:id", UserController, :update
   end
 
   # Enables LiveDashboard only for development
