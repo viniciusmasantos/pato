@@ -8,9 +8,14 @@ defmodule PatoWeb.Router do
   scope "/api", PatoWeb do
     pipe_through :api
 
+    # R
     get "/ping", HealthCheckController, :ping
+    # C
     post "/users", UserController, :create
+    # U
     put "/users/:id", UserController, :update
+    # R
+    get "/users/:id", UserController, :show
   end
 
   # Enables LiveDashboard only for development

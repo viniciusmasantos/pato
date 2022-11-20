@@ -36,4 +36,18 @@ defmodule UserControllerTest do
       assert subject["password"] == params.password
     end
   end
+
+  describe "show" do
+    test "returns ok when valid data", %{conn: conn} do
+      # data
+      user = insert(:user_minion)
+
+      # navegação
+      conn = get(conn, "/api/users/#{user.id}")
+
+      # expectativa
+      assert %{"data" => subject} = json_response(conn, 200)
+      assert subject["id"] == user.id
+    end
+  end
 end

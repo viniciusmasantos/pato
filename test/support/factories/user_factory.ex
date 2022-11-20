@@ -7,6 +7,13 @@ defmodule Pato.UserFactory do
           password: "1234"
         }
       end
+
+      def user_minion_factory do
+        %Pato.Auth.User{
+          login: "Carluxo",
+          password: "índio"
+        }
+      end
     end
   end
 end

@@ -18,4 +18,10 @@ defmodule PatoWeb.UserController do
       render(conn, "show.json", user: user)
     end
   end
+
+  def show(conn, params) do
+    user = Pato.Auth.get_user!(params["id"])
+
+    render(conn, "show.json", user: user)
+  end
 end
